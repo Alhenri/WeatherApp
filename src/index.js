@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+
 // Importação das paginas
 import Home from './pages/PageHome';
 import NotFound from './pages/NotFound';
