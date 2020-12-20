@@ -5,9 +5,12 @@ import {getFav, getWeather} from '../../data/data.js'
 import Card from '../../components/Card'
 
 function Home() {
+ 
+    const [fav, setFav] = useState(getFav());
 
-    // lista de favoritos
-    const [fav, setFav] = useState([]); 
+    useEffect(()=>{
+        setFav(getFav());
+    }, []);
     
     // clima
     const [weather, setWeather] = useState({
@@ -18,11 +21,7 @@ function Home() {
         icon: 'Loading...',
     })
 
-    //carregando os favoritos
-    useEffect(() => {
-        const data = getFav();
-        setFav(data);
-    }, []);
+    
 
     //console.log(weather)
     var pos=0;
@@ -32,25 +31,15 @@ function Home() {
         setWeather(data)
     }
 
-    function handleAddFavorite(lat, long) {
-        // falta o nome
-        console.log(lat, long)
-        // const newFav = 'a'
-
-        // setFav([
-        //     ...fav,
-        //     newFav
-        // ]);
-    }
 
     return(
-        <StyleHome weather={Background['chuva']} >
+        <StyleHome weather={Background['sol']}>
             <List>
                 <h1>Locais favoritos</h1>
                 
                 <Sec>
                     { fav.map(favorite => (
-                        <Card key={pos++} OnClick={() => {
+                        <Card config= {()=> {console.log("teste")}} key={pos++} OnClick={() => {
                             handleWeather(
                                 favorite.lat,
                                 favorite.long
@@ -63,10 +52,12 @@ function Home() {
             <List>
                 <Sec className="Info">
                     <h1>Informações</h1>
-                    <h2>{ weather.name }</h2>
-                    <h2>{ weather.temp }</h2>
+                    <h2>Cidade: { weather.name }</h2>
+                    <h3>Temperatura: {weather.temp}</h3>
+                    <h3>Umidade: {weather.humidity}%</h3>
+                    <h4>Descrição: {weather.desc}</h4>
                 </Sec>
-                <Button to={"/"}>Novo local</Button>
+                <Button to={"/AddLocal"}>Novo local</Button>
             </List>
         </StyleHome>
     )
