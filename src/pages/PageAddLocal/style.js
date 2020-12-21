@@ -25,6 +25,7 @@ export const ButtonArea = styled.div`
 
 export const Content = styled.div`
     background-color: white;
+    padding: 10px;
     flex: 1;
     margin: 10px 0;
     width: 80%;
@@ -40,8 +41,8 @@ export const Content = styled.div`
         padding: 5px;
     }
 
-    a{
+    /* a{
         margin: 10% 0;
         width: 30%;
-    }
+    } */
 `;
