@@ -9,7 +9,7 @@ export default function Card({children, OnClick, config}) {
                 {children}
             </span>
             <span className="img" onClick={config} >
-                <img src={op_img}/>
+                <img src={op_img} alt=":" />
             </span>
         </Container>
     )

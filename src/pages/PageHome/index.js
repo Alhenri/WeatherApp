@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Background, StyleHome, List, Sec } from './style.js'
 import Button from '../../components/Button'
-import {getFav, getWeather, removeFav} from '../../data/data.js'
+import {getFav, getWeather, removeFav, editFav} from '../../data/data.js'
 import Card from '../../components/Card'
 import Modal from '../../components/Modal'
 
@@ -52,6 +52,10 @@ function Home() {
 
                             value={locExib}
                             // chamada da Edição
+                            Edit={(newValue)=>{
+                                editFav(newValue, locExib);
+                                setModalState(false);
+                            }}
                             
                         />:null}
             

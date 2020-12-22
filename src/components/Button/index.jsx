@@ -4,7 +4,7 @@ import { StyledA } from './style.js'
 
 function Button({children, to, OnClick, cor}){
     return (
-        <StyledA as={Link} onClick={OnClick} to={to} bgColor={cor} >
+        <StyledA as={Link} onClick={OnClick} to={to} bgcolor={cor} >
             {children}
         </StyledA>
     )

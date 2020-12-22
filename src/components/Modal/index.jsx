@@ -15,13 +15,16 @@ export default function Modal({config, OnChange, Delete, Edit, value}) {
                </TitleArea>
                 <input
                     placeholder="Novo nome"
-                    onChange={(event)=>{setNewValue(event.target.value)}}
+                    onChange={(event)=>{
+                        setNewValue(event.target.value)
+
+                    }}
                     value = {newvalue}
                 />
 
                 <ButtonArea>
                     <Button cor OnClick={Delete}>Excluir</Button>
-                    <Button OnClick={Edit}>Salvar</Button>
+                    <Button OnClick={()=>{Edit(newvalue)}}>Salvar</Button>
                 </ButtonArea>
             </section>
         </StyledDiv>

@@ -42,6 +42,8 @@ export function addFav(newfav) { // recebe um json com as localizações favorit
     localStorage.setItem("locations", fav_json);
 }
 
+
+// Função que remove dos favoritos
 export function removeFav(remove) {
     // favorite.nome!=remove?favorite:null
     const fav = getFav();
@@ -55,6 +57,23 @@ export function removeFav(remove) {
         }
     });
 
+    localStorage.setItem("locations", JSON.stringify(newfav));
+}
+
+// Função que edita os favoritos
+export function editFav(newValue, oldValue){
+    const fav = getFav();
+
+    const newfav = fav.filter((favorite)=>{
+        if (favorite.nome === oldValue) {
+            favorite.nome = newValue;
+            return favorite;
+        }else{
+            return favorite
+        }
+    });
+
+    // Salvando novo valor
     localStorage.setItem("locations", JSON.stringify(newfav));
 }
 
