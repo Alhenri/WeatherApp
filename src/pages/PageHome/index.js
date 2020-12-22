@@ -1,18 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Background, StyleHome, List, Sec } from './style.js'
 import Button from '../../components/Button'
-import {getFav, getWeather} from '../../data/data.js'
+import {getFav, getWeather, removeFav} from '../../data/data.js'
 import Card from '../../components/Card'
+import Modal from '../../components/Modal'
 
 function Home() {
- 
+    
+    // Lista de locais favoritos salvo no navegador
     const [fav, setFav] = useState(getFav());
+
+    // Controle da exibição do modal
+    const [modalState, setModalState] = useState(false)
+
+    // Local favorito em exibição
+    const [locExib, setLocExib] = useState(null)
 
     useEffect(()=>{
         setFav(getFav());
-    }, []);
+    }, [modalState]);
     
-    // clima
+    // Controle da exibição da cidade indicada
     const [weather, setWeather] = useState({
         name: 'Loading...',
         temp: 'Loading...',
@@ -20,9 +28,6 @@ function Home() {
         desc: 'Loading...',
         icon: 'Loading...',
     })
-
-    
-
     //console.log(weather)
     var pos=0;
 
@@ -34,17 +39,36 @@ function Home() {
 
     return(
         <StyleHome weather={Background['sol']}>
+            {modalState?<Modal 
+                            // logica de exibição do modal
+                            config={()=> {
+                                setModalState(false)
+                            }}
+                            // chamada da exclusão do local
+                            Delete={() => {
+                                removeFav(locExib);
+                                setModalState(false)
+                            }}
+
+                            value={locExib}
+                            // chamada da Edição
+                            
+                        />:null}
+            
             <List>
                 <h1>Locais favoritos</h1>
                 
                 <Sec>
                     { fav.map(favorite => (
-                        <Card config= {()=> {console.log("teste")}} key={pos++} OnClick={() => {
+                        <Card config= {()=> setModalState(true)} key={pos++} OnClick={() => {
                             handleWeather(
                                 favorite.lat,
                                 favorite.long
-                                )}}>
+                            );
+                            setLocExib(favorite.nome)
+                        }}>
                             {favorite.nome}
+                        
                         </Card>
                     ))}
                 </Sec>

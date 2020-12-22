@@ -34,6 +34,8 @@ export const List = styled.section`
     flex-direction: column;
     background-color: rgba(209, 213, 204, 0.4);
     border-radius: 15px;
+
+    overflow: auto;
 `;
 
 export const Sec = styled(List)`

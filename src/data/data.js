@@ -32,7 +32,9 @@ export function getFav() {
 // Função que adiciona dados no localStorage
 export function addFav(newfav) { // recebe um json com as localizações favoritas
     var fav = getFav();
-    fav.push(newfav);
+    
+    // adiciona o novo elemento na frente do vetor
+    fav.unshift(newfav);
 
     console.log(fav);
 
@@ -40,8 +42,20 @@ export function addFav(newfav) { // recebe um json com as localizações favorit
     localStorage.setItem("locations", fav_json);
 }
 
-export function removeFav(params) {
-    
+export function removeFav(remove) {
+    // favorite.nome!=remove?favorite:null
+    const fav = getFav();
+
+    const newfav = fav.filter((favorite) => {
+        if (favorite.nome === remove) {
+            return null;
+        }
+        else{
+            return favorite;
+        }
+    });
+
+    localStorage.setItem("locations", JSON.stringify(newfav));
 }
 
 // Função que busca os dados da API (usar await quando for chamar)
