@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import Button from '../../components/Button'
 import Map from '../../components/Map'
 import { addFav } from '../../data/data';
-import { PageStyle, ButtonArea, Content } from './style.js'
+import { 
+        PageStyle, ButtonArea, ContentMap,
+        ContentLoc, BackButton
+    } from './style.js';
+import img_arrow from '../../assets/l_arrow.svg'
+import { Link } from 'react-router-dom'
+import bg from '../../weather-image/bg.jpeg'
 
 export default function PageAddLocal(){
     
@@ -57,23 +63,31 @@ export default function PageAddLocal(){
     })
 
     return (
-        <PageStyle>
+        <PageStyle bg={bg}>
+            <BackButton as={Link} to="/">
+                <img src={img_arrow} />
+                <h4>Voltar</h4>
+            </BackButton>
+            
             {loc.locAtual?// Tela com da localização atual
-            <Content className="locAtual">
+            <ContentLoc className="locAtual">
                 <h1>Localização atual</h1>
-                <input
-                placeholder="Nome"
-                onChange={handleFav}
-                value={newfav}
-                />
-                <Button OnClick={()=>{
-                    navigator.geolocation.getCurrentPosition(handleNewFavCurrent);
-                }} to="/" >Favoritar</Button>
-            </Content>
+
+                <section>
+                    <input
+                    placeholder="Nome"
+                    onChange={handleFav}
+                    value={newfav}
+                    />
+                    <Button OnClick={()=>{
+                        navigator.geolocation.getCurrentPosition(handleNewFavCurrent);
+                    }} to="/" >Favoritar</Button>
+                </section>
+            </ContentLoc>
             :null}
 
             {loc.map?// Tela com Mapa
-            <Content>
+            <ContentMap>
                 <h1>Localizar no mapa</h1>
                 <Map local={(lat, long)=>setLocalMap({
                     latitude: lat,
@@ -87,7 +101,7 @@ export default function PageAddLocal(){
                     />
                     <Button OnClick={handleNewFavMap} to="/">Favoritar</Button>
                 </ButtonArea>
-            </Content>
+            </ContentMap>
             :null}
 
             {/*Botoes de alternancia*/}

@@ -16,9 +16,6 @@ function Home() {
     // Local favorito em exibição
     const [locExib, setLocExib] = useState(null)
 
-    useEffect(()=>{
-        setFav(getFav());
-    }, [modalState]);
     
     // Controle da exibição da cidade indicada
     const [weather, setWeather] = useState({
@@ -30,11 +27,17 @@ function Home() {
     })
     //console.log(weather)
     var pos=0;
-
+    
+    // Atualizando o clima
     async function handleWeather(lat, long){
         const data = await getWeather(lat, long);
         setWeather(data)
     }
+    
+    // Atualização da lista
+    useEffect(()=>{
+        setFav(getFav());
+    }, [modalState]);
 
 
     return(

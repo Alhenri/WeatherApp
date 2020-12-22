@@ -18,7 +18,7 @@ function MyMap({local}) {
     latitude: -8.0632377,
     longitude: -34.8782602,
     width: '70vw',
-    height: '70vh',
+    height: '60vh',
     zoom: 10
   })
 

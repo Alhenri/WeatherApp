@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import sol_img from '../../weather-image/sol.jpg';
+import sol_img from '../../weather-image/bg.jpeg';
 import nub_img from '../../weather-image/nublado.jpg'
 import chuv_img from '../../weather-image/chuva.jpg'
 

@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
+
 export const PageStyle = styled.div`
-    background-color: black;
+    background-color: green;
     min-height: 100vh;
     width: 100vw;
 
@@ -9,6 +10,10 @@ export const PageStyle = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+
+    background-image: url(${({ bg })=> bg});
+    background-size: 100vw 100vh;
+
 `;
 
 export const ButtonArea = styled.div`
@@ -16,16 +21,21 @@ export const ButtonArea = styled.div`
     display: flex;
     justify-content: space-between;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+
+    input{
+        flex: 2;
+    }
 
     a{
         margin: 0 20px;
+        flex: 1;
     }
 `;
 
-export const Content = styled.div`
-    background-color: white;
-    padding: 10px;
+export const ContentMap = styled.div`
+    background-color: rgba(209, 213, 204, 0.4);
+    padding: 0;
     flex: 1;
     margin: 10px 0;
     width: 80%;
@@ -37,12 +47,54 @@ export const Content = styled.div`
     justify-content: center;
 
     input{
-        background-color: pink;
+        background-color: #AAEDED;
         padding: 5px;
+        border: none;
+        border-radius: 5px;
     }
+    h1{
+        font-family: 'Roboto Slab', serif;
+    }
+`;
 
-    /* a{
-        margin: 10% 0;
-        width: 30%;
-    } */
+export const ContentLoc = styled(ContentMap)`
+
+    section{
+        width: 50vw;
+        display: flex;
+        justify-content: space-between;
+        a{
+            margin-left: 10vw
+        }
+    }
+`;
+
+export const BackButton = styled.div`
+    text-decoration: none;
+    margin-right: auto;
+    margin-left: 10%;
+    margin-top: 5px;
+    background-color: #AAEDED;
+    display: flex;
+    color: black;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    width: 10vw;
+    padding: 5px;
+    transition: 0.3s;
+
+    img{
+        height: 3vh;
+        margin-right: 5px;
+    }
+    h4{
+        margin: 0;
+    }
+    :hover{
+        background-color: #67DEDE;
+        img{
+            height: 4vh;
+        }
+    }
 `;
