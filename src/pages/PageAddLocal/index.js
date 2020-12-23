@@ -64,7 +64,7 @@ export default function PageAddLocal(){
 
     return (
         <PageStyle bg={bg}>
-            <BackButton as={Link} to="/">
+            <BackButton as={Link} to="/" className="BackButton">
                 <img src={img_arrow} />
                 <h4>Voltar</h4>
             </BackButton>

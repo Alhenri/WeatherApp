@@ -12,7 +12,23 @@ export const PageStyle = styled.div`
     justify-content: space-between;
 
     background-image: url(${({ bg })=> bg});
-    background-size: 100vw 100vh;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    @media(max-width: 600px){
+        background-size: auto 100%;
+        div{
+            section{
+                flex-direction: column;
+                align-items: center;
+                a{
+                    margin-top: 10px;
+                    margin-left: 0;
+                }
+            }
+        }
+    } 
 
 `;
 
@@ -30,6 +46,15 @@ export const ButtonArea = styled.div`
     a{
         margin: 0 20px;
         flex: 1;
+    }
+
+    @media(max-width: 600px){
+        flex-direction: column;
+        align-items: center;
+        a{
+            margin: 0;
+            margin-top: 15px;
+        }
     }
 `;
 
@@ -98,4 +123,8 @@ export const BackButton = styled.div`
             height: 4vh;
         }
     }
+
+    @media(max-width: 600px){
+        width: 20vw;
+    } 
 `;
