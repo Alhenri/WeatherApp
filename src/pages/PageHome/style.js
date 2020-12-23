@@ -21,6 +21,43 @@ export const StyleHome = styled.div`
     align-items: center;
     display: flex;
 
+    /* Responsividade - Notebooks*/
+    @media(max-width: 768px){
+       flex-direction: column;
+
+       section{
+           width: 80vw;
+           height: 40vh;
+
+           section{
+               width: 70vw;
+           }
+
+           a{
+               width: 30vw;
+           }
+           span{
+               padding: 5px;
+               width: 40vw;
+
+               img{
+                   height: 3vh;
+               }
+           }
+       }
+    }
+
+    /* Responsividade - Celular */
+    @media(max-width: 420px){
+        section{
+            a{
+                width: 30vw;
+            }
+            span{
+                width: 60vw;
+            }
+        }
+    }
 `;
 
 export const List = styled.section`

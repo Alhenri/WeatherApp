@@ -32,7 +32,7 @@ function MyMap({local}) {
       <ReactMapGL
         {...viewport}
           mapboxApiAccessToken="pk.eyJ1Ijoic29uZXJvIiwiYSI6ImNraXl3dzd5ZDJrM2MycnA0bHQ3ZHQ2eXEifQ.SoB4ILfJ1RROcsYNqu1d2g"
-          onViewportChange={(newviewpport) => {setViewport(newviewpport)}}
+          onViewportChange={setViewport}
           mapStyle="mapbox://styles/sonero/ckj1lyxwt0y5019p8bmgn205w"
           onClick={(click) => {
             setViewmarker({
