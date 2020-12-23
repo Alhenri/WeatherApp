@@ -55,6 +55,7 @@ export const ContentMap = styled.div`
     h1{
         font-family: 'Roboto Slab', serif;
     }
+    
 `;
 
 export const ContentLoc = styled(ContentMap)`

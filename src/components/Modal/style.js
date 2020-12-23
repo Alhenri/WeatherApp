@@ -8,6 +8,7 @@ export const StyledDiv = styled.div`
     display:flex;
     justify-content: center;
     align-items: center;
+    
 
     background-color: rgba(0, 0, 0, 0.3);
 
@@ -22,6 +23,18 @@ export const StyledDiv = styled.div`
         justify-content: space-between;
         text-align: center;
         padding-bottom: 5px;
+        box-shadow: 10px 5px 5px black;
+
+        input{
+            background-color: #AAEDED;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        img{
+        height: 3vh;
+        }
 
         a {
             margin: 0 5px;
@@ -36,5 +49,7 @@ export const ButtonArea = styled.div`
 `;
 
 export const TitleArea = styled(ButtonArea)`
-    width: 95%;
+    font-family: 'Roboto Slab', serif;
+    width: 90%;
+    margin-top: 5%;
 `
