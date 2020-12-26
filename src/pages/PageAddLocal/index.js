@@ -81,7 +81,8 @@ export default function PageAddLocal(){
                     />
                     <Button OnClick={()=>{
                         navigator.geolocation.getCurrentPosition(handleNewFavCurrent);
-                    }} to="/" >Favoritar</Button>
+                        setNewFav("");
+                    }} >Favoritar</Button>
                 </section>
             </ContentLoc>
             :null}
@@ -99,7 +100,10 @@ export default function PageAddLocal(){
                         onChange={handleFav}
                         value={newfav}
                     />
-                    <Button OnClick={handleNewFavMap} to="/">Favoritar</Button>
+                    <Button OnClick={()=>{
+                        handleNewFavMap()
+                        setNewFav("");
+                        }}>Favoritar</Button>
                 </ButtonArea>
             </ContentMap>
             :null}
