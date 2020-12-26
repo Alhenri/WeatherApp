@@ -31,7 +31,7 @@ function MyMap({local}) {
     <StyledDiv>
       <ReactMapGL
         {...viewport}
-          mapboxApiAccessToken="pk.eyJ1Ijoic29uZXJvIiwiYSI6ImNraXl3dzd5ZDJrM2MycnA0bHQ3ZHQ2eXEifQ.SoB4ILfJ1RROcsYNqu1d2g"
+          mapboxApiAccessToken="pk.eyJ1Ijoic29uZXJvIiwiYSI6ImNraXl3c3F1NjFveG4yc3BmMW9xcG1nZjIifQ.XS3gy89M6uPHYNI8TslaOw"
           onViewportChange={setViewport}
           mapStyle="mapbox://styles/sonero/ckj1lyxwt0y5019p8bmgn205w"
           onClick={(click) => {

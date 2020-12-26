@@ -7210,10 +7210,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-mapbox-gl@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.0.0.tgz#a91bb7c58bd7d2dcab89f0f8a6571ff441daf1ef"
-  integrity sha512-agvgYMQflJj1Qp3Ge3IGWIHC/KGc65ukTE47OU9GFc4MGGUa1LngxNWul0ubD8AujmpWyVwfDnZDSoL8hA4c8Q==
+mapbox-gl@^1.0.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.13.0.tgz#23b339ba5116b7e3b5a2043ea968f7fcb53e34a6"
+  integrity sha512-g8zlzuJxYJqbOPXT19/UBYpVrcefBQ06F/Cbj0fyEfFnFesDcU3cFTxd75/FZ6Upx2ZEjCsD61CHxrcxZidVpA==
   dependencies:
     "@mapbox/geojson-rewind" "^0.5.0"
     "@mapbox/geojson-types" "^1.0.2"
@@ -9255,13 +9255,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-map-gl@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-6.0.2.tgz#88e9a901ddbe6efd38aa8cbee8878cdd76c1d9d3"
-  integrity sha512-YsUnE1qRoez+ZVkyNsAjOOL0DIazgV4bVn7NsnziW9tUIDUCoErTy/EEl0YZiiIwxpTW+6Rls/rOmtSqaWvsJw==
+react-map-gl@^5.2.10:
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-5.2.10.tgz#2e7cf92bb99d528068069cb4b29226c8035c58af"
+  integrity sha512-Mjb0+obehBCjCdfWDmAy51PfsWFW4pIDkgm2RvQLuQoRD0zF4W+vCAAZkV2pgCtA9akGmOcFKQki4H1+Noyzag==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    mapbox-gl "^2.0.0"
+    mapbox-gl "^1.0.0"
     mjolnir.js "^2.4.0"
     prop-types "^15.7.2"
     react-virtualized-auto-sizer "^1.0.2"
