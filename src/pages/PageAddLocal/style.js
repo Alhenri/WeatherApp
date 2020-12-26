@@ -6,6 +6,8 @@ export const PageStyle = styled.div`
     min-height: 100vh;
     width: 100vw;
 
+    cursor: pointer;
+
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -76,9 +78,14 @@ export const ContentMap = styled.div`
         padding: 5px;
         border: none;
         border-radius: 5px;
+        flex: 2;
     }
-    h1{
+    h1, h5{
         font-family: 'Roboto Slab', serif;
+        margin-top: 0;
+    }
+    a{
+        flex: 1;
     }
     
 `;

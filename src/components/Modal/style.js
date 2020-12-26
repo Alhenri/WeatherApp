@@ -40,6 +40,12 @@ export const StyledDiv = styled.div`
             margin: 0 5px;
         }
     }
+
+    @media(max-width: 640px){
+        section{
+            width: 70%;
+        }
+    }
 `;
 
 export const ButtonArea = styled.div`

@@ -19,11 +19,11 @@ function Home() {
     
     // Controle da exibição da cidade indicada
     const [weather, setWeather] = useState({
-        name: 'Loading...',
-        temp: 'Loading...',
-        humidity: 'Loading...',
-        desc: 'Loading...',
-        icon: 'Loading...',
+        name: 'Escolha um local',
+        temp: '',
+        humidity: '',
+        desc: '',
+        icon: '',
     })
     //console.log(weather)
     var pos=0;
@@ -88,7 +88,7 @@ function Home() {
                     <h3>Umidade: {weather.humidity}%</h3>
                     <h4>Descrição: {weather.desc}</h4>
                 </Sec>
-                <Button to={"/AddLocal"}>Novo local</Button>
+                <Button to={"/AddLocal"}>Adicionar novo local</Button>
             </List>
         </StyleHome>
     )

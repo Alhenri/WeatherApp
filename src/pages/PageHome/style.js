@@ -20,6 +20,12 @@ export const StyleHome = styled.div`
 
     align-items: center;
     display: flex;
+    cursor: pointer;
+
+    h1{
+        font-family: 'Roboto Slab', serif;
+        margin-top: 0;
+    }
 
     /* Responsividade - Notebooks*/
     @media(max-width: 768px){

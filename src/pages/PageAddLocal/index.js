@@ -65,13 +65,14 @@ export default function PageAddLocal(){
     return (
         <PageStyle bg={bg}>
             <BackButton as={Link} to="/" className="BackButton">
-                <img src={img_arrow} />
+                <img src={img_arrow} alt="<-"/>
                 <h4>Voltar</h4>
             </BackButton>
             
             {loc.locAtual?// Tela com da localização atual
             <ContentLoc className="locAtual">
                 <h1>Localização atual</h1>
+                <h5>Digite um nome para a sua localização atual (ex: "Minha casa")</h5>
 
                 <section>
                     <input
@@ -82,7 +83,7 @@ export default function PageAddLocal(){
                     <Button OnClick={()=>{
                         navigator.geolocation.getCurrentPosition(handleNewFavCurrent);
                         setNewFav("");
-                    }} >Favoritar</Button>
+                    }} >Salvar</Button>
                 </section>
             </ContentLoc>
             :null}
@@ -103,7 +104,7 @@ export default function PageAddLocal(){
                     <Button OnClick={()=>{
                         handleNewFavMap()
                         setNewFav("");
-                        }}>Favoritar</Button>
+                        }}>Salvar</Button>
                 </ButtonArea>
             </ContentMap>
             :null}
