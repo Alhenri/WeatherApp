@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Weather App Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto foi criado utilizando o ReactJS como framework e tratasse de uma pagina web que busca informações\
+sobre o tempo/clima de regiões selecionadas.
 
-## Available Scripts
+### `Funcionalidades`
 
-In the project directory, you can run:
+1. A principal funcionalidade é a de verificar o tempo/clima de regiões do mundo todo. Você pode adicionar locais favoritos\
+a sua pagina inicial. Sempre que desejar ter informações sobre o tempo basta clicar.
 
-### `yarn start`
+2. Há duas formas de selecionar um local, a primeira utiliza sua localização atual e salva nos favoritos com o nome\
+que você escoher. Já a segunda utiliza de uma seleção pelo mapa, onde você escolhe qualquer lugar do mundo!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. A lista de locais favoritos é guardada no armazenamento local do seu navegador (local storage). Salvando as informações\
+adicionadas numa lista do mais recente para o mais antigo.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. É possivel tambem alterar o nome com que a informação foi salva ou excluir de seus favoritos.
 
-### `yarn test`
+### `Construção`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Aplicação construida utilizando o framework [ReactJS](https://pt-br.reactjs.org) também conta com a biblioteca
+styled-components para a criação dos estilos e a react-map-gl na manipulação dos mapas
 
-### `yarn build`
+2. A aplicação tratasse de uma pagina [SPA](https://en.wikipedia.org/wiki/Single-page_application) pois a navegação entre\
+suas paginas não necessita do recarregamento completo da página.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Navegação`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Pagina inicial:
+  A página inicial conta com uma lista de locais favoritos (inicialmente vazia) e um local onde é possivel visualizar\
+  informações e adicionar locais.
+  * Para adicionar um local favorito clique no botão "Adicionar novo local".
+  * Para editar o nome ou excluir um local favorito clique no icone de configurações.
+  * Para visualizar informações de um local favorito selecione-o clicando sobre ele.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Pagina de novo local:
+  Há duas possibilidades de adcionar um novo local, pela sua localização ou pelo mapa.\
+  * Pela sua localização: Basta digitar um nome que quer dá a sua localização e clicar em "salvar".
+  * Pelo mapa: Clique em "Selecionar local no mapa", navegue pelo mapa clicando e arrastando e selecione o local desejado.\
+  Após isso, escolha um nome e clique em "Salvar".
+  
+  ### `Mais informações`
+  
+  * Deployment: A pagina está disponivel para ser acessada na [heroku](https://weather-app-web1.herokuapp.com) e na [vercel](https://weather-app-lqjafdib5.vercel.app).
