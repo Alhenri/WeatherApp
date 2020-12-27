@@ -1,34 +1,24 @@
 import styled from 'styled-components'
-import sol_img from '../../weather-image/bg.jpeg';
-import nub_img from '../../weather-image/nublado.jpg'
-import chuv_img from '../../weather-image/chuva.jpg'
-
-// Imagens para background
-export const Background = {
-    sol: sol_img,
-    nublado: nub_img,
-    chuva: chuv_img,
-};
 
 // construção da Home
 export const StyleHome = styled.div`
 
     height: 100vh;
     width: 100vw;
-    background-image: url(${props => props.weather});
+    background-image: url(${props => props.bg});
     background-size: 100vw 100vh;
 
     align-items: center;
     display: flex;
     cursor: pointer;
 
-    h1{
+    h1, h2, h3, h4{
         font-family: 'Roboto Slab', serif;
         margin-top: 0;
     }
 
     /* Responsividade - Notebooks*/
-    @media(max-width: 768px){
+    @media(max-width: 668px){
        flex-direction: column;
 
        section{
@@ -57,7 +47,7 @@ export const StyleHome = styled.div`
     @media(max-width: 420px){
         section{
             a{
-                width: 30vw;
+                width: 50vw;
             }
             span{
                 width: 60vw;
@@ -86,4 +76,11 @@ export const Sec = styled(List)`
     background-color: rgba(209, 213, 204, 0);
     width: 25vw;
     height: 70vh;
+    div{
+        margin: auto 0;
+    }
+
+    h3, h4{
+        text-align: left;
+    }
 `;

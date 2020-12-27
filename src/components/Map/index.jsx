@@ -15,16 +15,16 @@ const StyledDiv = styled.div`
 function MyMap({local}) {
 
   const [viewport, setViewport] = useState({
-    latitude: -8.0632377,
-    longitude: -34.8782602,
+    latitude: -12.47008216554,
+    longitude: -50.2430936564,
     width: '70vw',
-    height: '60vh',
-    zoom: 10
+    height: '55vh',
+    zoom: 2
   })
 
   const [viewmarker, setViewmarker] = useState({
-    latitude: -8.0632377000000,
-    longitude: -34.878260200000
+    latitude: -12.47008216554,
+    longitude: -50.2430936564
   })
 
   return(

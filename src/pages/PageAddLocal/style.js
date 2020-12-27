@@ -35,7 +35,7 @@ export const PageStyle = styled.div`
 `;
 
 export const ButtonArea = styled.div`
-    width: 60%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -53,6 +53,7 @@ export const ButtonArea = styled.div`
     @media(max-width: 600px){
         flex-direction: column;
         align-items: center;
+        width: 80%;
         a{
             margin: 0;
             margin-top: 15px;
@@ -83,6 +84,7 @@ export const ContentMap = styled.div`
     h1, h5{
         font-family: 'Roboto Slab', serif;
         margin-top: 0;
+        margin-bottom: 1vh;
     }
     a{
         flex: 1;
@@ -93,6 +95,7 @@ export const ContentMap = styled.div`
 export const ContentLoc = styled(ContentMap)`
 
     section{
+        margin-top: 1vh;
         width: 50vw;
         display: flex;
         justify-content: space-between;

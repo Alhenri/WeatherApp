@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Background, StyleHome, List, Sec } from './style.js'
+import { StyleHome, List, Sec } from './style.js'
 import Button from '../../components/Button'
 import {getFav, getWeather, removeFav, editFav} from '../../data/data.js'
 import Card from '../../components/Card'
 import Modal from '../../components/Modal'
+import bg_img from '../../weather-image/bg.jpeg'
 
-function Home() {
+function Home(prop) {
     
     // Lista de locais favoritos salvo no navegador
     const [fav, setFav] = useState(getFav());
@@ -19,7 +20,7 @@ function Home() {
     
     // Controle da exibição da cidade indicada
     const [weather, setWeather] = useState({
-        name: 'Escolha um local',
+        name: '',
         temp: '',
         humidity: '',
         desc: '',
@@ -37,11 +38,11 @@ function Home() {
     // Atualização da lista
     useEffect(()=>{
         setFav(getFav());
-    }, [modalState]);
+    }, [modalState, prop]);
 
 
     return(
-        <StyleHome weather={Background['sol']}>
+        <StyleHome bg={bg_img}>
             {modalState?<Modal 
                             // logica de exibição do modal
                             config={()=> {
@@ -81,12 +82,18 @@ function Home() {
                 </Sec>
             </List>
             <List>
+                <h1>Informações</h1>
                 <Sec className="Info">
-                    <h1>Informações</h1>
-                    <h2>Cidade: { weather.name }</h2>
-                    <h3>Temperatura: {weather.temp}</h3>
-                    <h3>Umidade: {weather.humidity}%</h3>
-                    <h4>Descrição: {weather.desc}</h4>
+                    {weather.name===''?
+                        <h1>Selecione o local primeiro</h1>
+                    :
+                    <div>
+                        <h2>{ weather.name }</h2>
+                        <h3>Temperatura: {weather.temp}°C</h3>
+                        <h3>Umidade: {weather.humidity}%</h3>
+                        <h4>Descrição: {weather.desc}</h4>
+                    </div>
+                    }
                 </Sec>
                 <Button to={"/AddLocal"}>Adicionar novo local</Button>
             </List>

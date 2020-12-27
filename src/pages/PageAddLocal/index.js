@@ -32,14 +32,18 @@ export default function PageAddLocal(){
             lat: local.coords.latitude,
             long: local.coords.longitude
         }
-        fav.nome===""?
-        window.alert("Nome de local inválido"):
-        addFav(fav);
+        if(fav.nome===""){
+            window.alert("Nome de local inválido");
+        }
+        else{
+            addFav(fav);
+            window.location.href = "/";
+        }
     }
 
     function handleNewFavMap(){
         if(newfav===""){
-            window.alert("Nome inválido");
+            window.alert("Digite um nome para continuar!");
             return
         }
         if(localmap.latitude===""){
@@ -72,7 +76,7 @@ export default function PageAddLocal(){
             {loc.locAtual?// Tela com da localização atual
             <ContentLoc className="locAtual">
                 <h1>Localização atual</h1>
-                <h5>Digite um nome para a sua localização atual (ex: "Minha casa")</h5>
+                <h5>Digite um nome para a sua localização atual (ex: "Minha casa") e clique em "Salvar"</h5>
 
                 <section>
                     <input
@@ -91,6 +95,7 @@ export default function PageAddLocal(){
             {loc.map?// Tela com Mapa
             <ContentMap>
                 <h1>Localizar no mapa</h1>
+                <h5>Selecione um local no mapa e digite o nome com que deseja salvar (ex: "meu trabalho")</h5>
                 <Map local={(lat, long)=>setLocalMap({
                     latitude: lat,
                     longitude: long,
@@ -104,21 +109,24 @@ export default function PageAddLocal(){
                     <Button OnClick={()=>{
                         handleNewFavMap()
                         setNewFav("");
-                        }}>Salvar</Button>
+                        }} to="/" >Salvar</Button>
                 </ButtonArea>
             </ContentMap>
             :null}
 
             {/*Botoes de alternancia*/}
             <ButtonArea>
-                <Button OnClick={()=>setLoc({
-                    locAtual: true,
-                    map: false
-                })}> Localização atual </Button>
-                <Button OnClick={()=>setLoc({
-                    locAtual: false,
-                    map: true
-                })}> Abrir mapa </Button>
+                {loc.locAtual?
+                    <Button OnClick={()=>setLoc({
+                        locAtual: false,
+                        map: true
+                    })}> Selecionar local no mapa </Button>
+                    :
+                    <Button OnClick={()=>setLoc({
+                        locAtual: true,
+                        map: false
+                    })}> Utilizar localização atual </Button>
+                }
             </ButtonArea>
 
         </PageStyle>
