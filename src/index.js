@@ -8,6 +8,8 @@ import Home from './pages/PageHome';
 import NotFound from './pages/NotFound';
 import AddLocal from './pages/PageAddLocal'
 
+
+// Controle da SPA
 ReactDOM.render(
   <BrowserRouter>
     <Switch>

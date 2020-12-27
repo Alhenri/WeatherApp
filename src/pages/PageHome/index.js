@@ -43,6 +43,7 @@ function Home(prop) {
 
     return(
         <StyleHome bg={bg_img}>
+            {/* Controle da visualização do modal */}
             {modalState?<Modal 
                             // logica de exibição do modal
                             config={()=> {
@@ -63,9 +64,10 @@ function Home(prop) {
                             
                         />:null}
             
+            {/* Lista de locais favoritos */}
             <List>
                 <h1>Locais favoritos</h1>
-                
+                {/* Criando um card para cada local */}
                 <Sec>
                     { fav.map(favorite => (
                         <Card config= {()=> setModalState(true)} key={pos++} OnClick={() => {
@@ -81,6 +83,8 @@ function Home(prop) {
                     ))}
                 </Sec>
             </List>
+
+            {/* Região onde serão exibidas as informações de clima */}
             <List>
                 <h1>Informações</h1>
                 <Sec className="Info">

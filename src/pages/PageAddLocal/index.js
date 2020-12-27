@@ -15,17 +15,19 @@ export default function PageAddLocal(){
     // novo favorito
     const [newfav, setNewFav] = useState("");
 
+    // Estados das coordenadas
     const [localmap, setLocalMap] = useState({
         latitude: "",
         longitude: "",
     });
 
+    // Função que altera o nome do novo local
     function handleFav(event){
         const value = event.target.value
         setNewFav(value)
     }
 
-    // Função que atualiza com a posição atual
+    // Função que atualiza o local com a posição atual
     function handleNewFavCurrent(local) {
         const fav = {
             nome: newfav,
@@ -60,7 +62,7 @@ export default function PageAddLocal(){
         addFav(fav);
     }
 
-    // controle do tipo de captura
+    // controle do tipo de captura do local
     const [loc, setLoc] = useState({
         locAtual: true,
         map: false
@@ -73,7 +75,7 @@ export default function PageAddLocal(){
                 <h4>Voltar</h4>
             </BackButton>
             
-            {loc.locAtual?// Tela com da localização atual
+            {loc.locAtual?// Exibir tela de localização atual
             <ContentLoc className="locAtual">
                 <h1>Localização atual</h1>
                 <h5>Digite um nome para a sua localização atual (ex: "Minha casa") e clique em "Salvar"</h5>
@@ -92,7 +94,7 @@ export default function PageAddLocal(){
             </ContentLoc>
             :null}
 
-            {loc.map?// Tela com Mapa
+            {loc.map?// Exibir tela com Mapa
             <ContentMap>
                 <h1>Localizar no mapa</h1>
                 <h5>Selecione um local no mapa e digite o nome com que deseja salvar (ex: "meu trabalho")</h5>
@@ -114,7 +116,7 @@ export default function PageAddLocal(){
             </ContentMap>
             :null}
 
-            {/*Botoes de alternancia*/}
+            {/*Botoes de alternancia de local atual e mapa*/}
             <ButtonArea>
                 {loc.locAtual?
                     <Button OnClick={()=>setLoc({

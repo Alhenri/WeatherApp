@@ -1,7 +1,5 @@
-//Obs: tem que ser armazenado com JSON e retornado como objeto
+//Obs: tem que ser armazenado como string(json) e retornado como objeto
 /* Exemplo do json 
-
-api_key: AIzaSyDnBKKWqyn76AS-l7IN8ZZzIrPgaqUKbI8
 
 let obj = [
     {
@@ -10,7 +8,7 @@ let obj = [
         long: 365791,
     },
     {
-        nome: "Abreu e lima",
+        nome: "Olinda",
         lat: 123456,
         long: 365791,
     },
@@ -35,19 +33,19 @@ export function addFav(newfav) { // recebe um json com as localizações favorit
     
     // adiciona o novo elemento na frente do vetor
     fav.unshift(newfav);
-
-    console.log(fav);
-
     const fav_json = JSON.stringify(fav); // transformando numa string
+    // Salvando
     localStorage.setItem("locations", fav_json);
 }
 
 
 // Função que remove dos favoritos
 export function removeFav(remove) {
-    // favorite.nome!=remove?favorite:null
+    
+    // Recebendo a lista de locais favoritos
     const fav = getFav();
 
+    // Filtrando
     const newfav = fav.filter((favorite) => {
         if (favorite.nome === remove) {
             return null;
@@ -57,6 +55,7 @@ export function removeFav(remove) {
         }
     });
 
+    // Salvando nova lista
     localStorage.setItem("locations", JSON.stringify(newfav));
 }
 
@@ -77,12 +76,14 @@ export function editFav(newValue, oldValue){
     localStorage.setItem("locations", JSON.stringify(newfav));
 }
 
-// Função que busca os dados da API (usar await quando for chamar)
+// Função que busca os dados da API
 export async function getWeather(lat, long) {
-
+    
+    // Fazendo chamada a API
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=d812ba41f36e1b6fdb2e8a4b8224ec45&units=metric&lang=pt_br`)    
     const results = await response.json()
 
+    // Salvando os resultados
     const weather = {
         name: results.name,
         temp: results.main.temp,
