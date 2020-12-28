@@ -1,7 +1,7 @@
 # Weather App Web
 
-Este projeto foi criado utilizando o ReactJS como framework e tratasse de uma pagina web que busca informações\
-sobre o tempo/clima de regiões selecionadas.
+Este projeto foi criado utilizando o ReactJS como framework e trata-se de uma página web que busca informações\
+sobre o clima de regiões selecionadas.
 
 ### `Funcionalidades`
 
