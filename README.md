@@ -1,5 +1,7 @@
 # Weather App Web
 
+<img src="https://media.giphy.com/media/k0JPEO1JY2kxxAMxeq/giphy.gif" width="420" height="300"/>
+
 Este projeto foi criado utilizando o ReactJS como framework e trata-se de uma página web que busca informações
 sobre o clima de regiões selecionadas.
 
